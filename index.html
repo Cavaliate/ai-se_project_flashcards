@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Keivon Yang" />
+    <meta
+      name="description"
+      content="study aids, flashcards, learning materials, etc"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Software Engineering Flashcard</title>
+    <link rel="favicon" href="favicon.ico" />
+    <link rel="stylesheet" href="assets/vendor/normalize.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="./assets/js/index.js" type="module"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <h1 class="header__title">
+        <a class="header__navagation-link" href="#home">Flashcard</a>
+      </h1>
+      <nav class="header__nav">
+        <ul class="header__nav-links">
+          <li class="header__nav-link"><a href="#home">My Decks</a></li>
+          <li class="header__nav-link"><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="pagemain-content">
+      <section id="home" class="decks">
+        <h2 class="pagemain-content__my-decks">My Decks</h2>
+        <ul class="decks__flash-cards"></ul>
+        <div class="decks__flash-btn decks__flash-card card-gray">
+          <a class="decks__flash-cards-new-deck" href="#">+ New Deck</a>
+        </div>
+      </section>
+      <section id="not-found" class="not-found">
+        <h2 class="not-found__status-code">404</h2>
+        <p class="not-found__text">Sorry, nothing found!</p>
+      </section>
+      <section id="carousel" class="carousel">
+        <h2 class="carousel__title">HTML Tags Deck • 1/10 cards</h2>
+        <section class="carousel__card">
+          <button
+            class="carousel__btn carousel__btn_type_left carousel__btn_disabled"
+          >
+            <img src="./assets/images/left.svg" alt="Left Button" />
+          </button>
+          <div class="carousel__card-content">
+            <h3 class="carousel__card-text">&lt;body&gt;&lt;/body&gt;</h3>
+          </div>
+          <button class="carousel__btn carousel__btn_type_right">
+            <img src="./assets/images/right.svg" alt="Right Button" />
+          </button>
+        </section>
+        <button class="carousel__btn carousel__btn_type_flip">
+          <img src="./assets/images/flip.svg" alt="Flip Button" />
+        </button>
+      </section>
+    </main>
+    <footer class="footer">
+      <h2 class="footer__text">@2026 Keivon Yang</h2>
+    </footer>
+    <template id="decks__flash-card-template">
+      <li class="deck">
+        <div class="decks__flash-card card-green">
+          <a class="deck__link" href="#carousel"></a>
+          <h3 class="decks__titles"></h3>
+          <div class="decks__flash-card-contents"></div>
+          <div class="decks__flash-card-card-count-delete">
+            <p class="card-count">10 cards</p>
+            <button class="decks__delete-btn">
+              <img src="./assets/images/delete.svg" alt="delete-image" />
+            </button>
+          </div>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>
