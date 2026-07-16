@@ -9,3 +9,7 @@ Interactive Flashcards, Dynamic Carousel, and More!
 ## Technologies Used
 
 VSCode
+
+## Deployed Site
+
+Check out [this site](https://cavaliate.github.io/ai-se_project_flashcards/) on GitHub Pages.
