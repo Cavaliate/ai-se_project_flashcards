@@ -1,4 +1,4 @@
-import { decks, getDeckByID } from "./decks.js";
+import { decks, getDeckByID } from "./cards.js";
 import { stringToHex, hexToString, removeColorClasses } from "./colors.js";
 import { renderCarouselDeckView } from "./carousel.js";
 
@@ -12,24 +12,26 @@ function renderHomeView() {
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
 
-  const deckTemplateEl = document.querySelector("#decks__flash-card-template");
-  const decksContainer = document.querySelector(".decks__flash-cards");
+  const deckTemplateEl = document.querySelector(
+    "#gallery__flash-card-template",
+  );
+  const decksContainer = document.querySelector(".gallery__flash-cards");
 
   function createDeckEl(deck) {
     const deckContainer = deckTemplateEl.content.cloneNode(true);
-    const deckEl = deckContainer.querySelector(".deck");
-    const deckTitleEl = deckEl.querySelector(".decks__titles");
+    const deckEl = deckContainer.querySelector(".card");
+    const deckTitleEl = deckEl.querySelector(".gallery__titles");
     const deckCountEl = deckEl.querySelector(".card-count");
-    const deleteBtn = deckEl.querySelector(".decks__delete-btn");
+    const deleteBtn = deckEl.querySelector(".gallery__delete-btn");
     const deckColor = deck.color;
 
-    const deckLink = deckContainer.querySelector(".deck__link");
+    const deckLink = deckContainer.querySelector(".card__link");
     deckLink.href = `#carousel/${deck.id}`;
 
     deckTitleEl.textContent = deck.name;
     deckCountEl.textContent = `${deck.cards.length} cards`;
 
-    const cardEl = deckEl.querySelector(".decks__flash-card");
+    const cardEl = deckEl.querySelector(".gallery__flash-card");
     if (cardEl && deck.color) {
       cardEl.style.backgroundColor = deck.color;
     }
@@ -60,7 +62,7 @@ function renderNotFoundView() {
 }
 function router() {
   const hash = window.location.hash.slice(1) || "home";
-  mainEl.classList.remove("pagemain-content_carousel"); 
+  mainEl.classList.remove("pagemain-content_carousel");
 
   if (hash === "home" || hash === "") {
     renderHomeView();

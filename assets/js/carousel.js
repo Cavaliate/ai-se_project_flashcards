@@ -1,4 +1,4 @@
-import { decks, getDeckByID } from "./decks.js";
+import { decks, getDeckByID } from "./cards.js";
 import { stringToHex, hexToString, removeColorClasses } from "./colors.js";
 
 function renderCarouselDeckView(deck) {

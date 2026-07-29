@@ -33,11 +33,11 @@
       </nav>
     </header>
     <main class="pagemain-content">
-      <section id="home" class="decks">
+      <section id="home" class="gallery">
         <h2 class="pagemain-content__my-decks">My Decks</h2>
-        <ul class="decks__flash-cards"></ul>
-        <div class="decks__flash-btn decks__flash-card card-gray">
-          <a class="decks__flash-cards-new-deck" href="#">+ New Deck</a>
+        <ul class="gallery__flash-cards"></ul>
+        <div class="gallery__flash-btn gallery__flash-card card-gray">
+          <a class="gallery__new-card-btn" href="#">+ New Deck</a>
         </div>
       </section>
       <section id="not-found" class="not-found">
@@ -67,15 +67,15 @@
     <footer class="footer">
       <h2 class="footer__text">@2026 Keivon Yang</h2>
     </footer>
-    <template id="decks__flash-card-template">
-      <li class="deck">
-        <div class="decks__flash-card card-green">
-          <a class="deck__link" href="#carousel"></a>
-          <h3 class="decks__titles"></h3>
-          <div class="decks__flash-card-contents"></div>
-          <div class="decks__flash-card-card-count-delete">
+    <template id="gallery__flash-card-template">
+      <li class="card">
+        <div class="gallery__flash-card card-green">
+          <a class="card__link" href="#carousel"></a>
+          <h3 class="gallery__titles"></h3>
+          <div class="gallery__flash-card-contents"></div>
+          <div class="gallery__flash-card-card-count-delete">
             <p class="card-count">10 cards</p>
-            <button class="decks__delete-btn">
+            <button class="gallery__delete-btn">
               <img src="./assets/images/delete.svg" alt="delete-image" />
             </button>
           </div>

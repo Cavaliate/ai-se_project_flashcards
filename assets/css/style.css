@@ -13,12 +13,12 @@
   align-items: center;
   padding-top: 100px;
 }
-.deck {
+.card {
   /* existing styles */
   position: relative;
 }
 
-.deck__link {
+.card__link {
   position: absolute;
   inset: 0;
   z-index: 1;
