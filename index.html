@@ -40,6 +40,14 @@
           <a class="gallery__new-card-btn" href="#">+ New Deck</a>
         </div>
       </section>
+      <section id="deck-view" class="gallery">
+        <h2 class="pagemain-content__my-decks"></h2>
+        <ul class="gallery__flash-cards"></ul>
+        <div class="gallery__flash-btn gallery__flash-card card-gray">
+          <a class="deck-view__new-card-btn" href="#"></a>
+          <a class="deck-view__practice-btn" href="#"></a>
+        </div>
+      </section>
       <section id="not-found" class="not-found">
         <h2 class="not-found__status-code">404</h2>
         <p class="not-found__text">Sorry, nothing found!</p>
@@ -75,6 +83,21 @@
           <div class="gallery__flash-card-contents"></div>
           <div class="gallery__flash-card-card-count-delete">
             <p class="card-count">10 cards</p>
+            <button class="gallery__delete-btn">
+              <img src="./assets/images/delete.svg" alt="delete-image" />
+            </button>
+          </div>
+        </div>
+      </li>
+    </template>
+    <template id="card-template">
+      <li class="card">
+        <div class="gallery__flash-card card-green">
+          <a  href="#carousel"></a>
+          <h3 class="gallery__titles"></h3>
+          <div class="gallery__flash-card-contents"></div>
+          <div class="gallery__flash-card-card-count-delete">
+            <p class="card-btn"></p>
             <button class="gallery__delete-btn">
               <img src="./assets/images/delete.svg" alt="delete-image" />
             </button>
