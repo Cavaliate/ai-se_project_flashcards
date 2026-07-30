@@ -41,11 +41,13 @@
         </div>
       </section>
       <section id="deck-view" class="gallery">
-        <h2 class="pagemain-content__my-decks"></h2>
+        <div class="pagemain-content__header">
+          <h2 class="pagemain-content__my-decks"></h2>
+          <button class="deck-view__practice-btn">Practice</button>
+        </div>
         <ul class="gallery__flash-cards"></ul>
         <div class="gallery__flash-btn gallery__flash-card card-gray">
-          <a class="deck-view__new-card-btn" href="#"></a>
-          <a class="deck-view__practice-btn" href="#"></a>
+          <a class="deck-view__new-card-btn" href="#">+ New Card</a>
         </div>
       </section>
       <section id="not-found" class="not-found">
@@ -77,7 +79,7 @@
     </footer>
     <template id="gallery__flash-card-template">
       <li class="card">
-        <div class="gallery__flash-card card-green">
+        <div class="gallery__flash-card">
           <a class="card__link" href="#carousel"></a>
           <h3 class="gallery__titles"></h3>
           <div class="gallery__flash-card-contents"></div>
@@ -92,12 +94,16 @@
     </template>
     <template id="card-template">
       <li class="card">
-        <div class="gallery__flash-card card-green">
-          <a  href="#carousel"></a>
+        <div class="gallery__flash-card">
+          <a class="card__link" href="#carousel"></a>
           <h3 class="gallery__titles"></h3>
           <div class="gallery__flash-card-contents"></div>
           <div class="gallery__flash-card-card-count-delete">
-            <p class="card-btn"></p>
+            <p class="card-count">
+              <button class="card__flip-btn">
+                <img src="./assets/images/flip.svg" alt="flip" />
+              </button>
+            </p>
             <button class="gallery__delete-btn">
               <img src="./assets/images/delete.svg" alt="delete-image" />
             </button>
