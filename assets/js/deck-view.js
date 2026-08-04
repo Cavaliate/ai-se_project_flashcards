@@ -1,13 +1,10 @@
 import { removeColorClasses } from "./colors.js";
+import { openModal } from "./index.js";
 
-function renderDeckView(
-  deck,
-  { homeSection, deckViewSection, carouselSection, notFoundSection },
-) {
-  homeSection.style.display = "none";
-  deckViewSection.style.display = "block";
-  carouselSection.style.display = "none";
-  notFoundSection.style.display = "none";
+const pageElement = document.body;
+
+function renderDeckView(deck, deckViewSection) {
+  pageElement.classList.remove("page_no-mobile-bar");
 
   const deckViewTitleEl = deckViewSection.querySelector(
     ".pagemain-content__my-decks",
@@ -74,7 +71,13 @@ function renderDeckView(
     });
     if (deleteBtn) {
       deleteBtn.addEventListener("click", () => {
-        cardEl.remove();
+        openModal(() => {
+          const idx = deck.cards.findIndex((c) => c.id === card.id);
+          if (idx > -1) {
+            deck.cards.splice(idx, 1);
+          }
+          cardEl.remove();
+        });
       });
     }
 

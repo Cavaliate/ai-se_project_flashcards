@@ -40,6 +40,12 @@
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
+  flex-direction: column;
+  width: 325px;
+  height: 205px;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Header practice button placement — rely on header.css flex layout */
@@ -80,6 +86,10 @@
   border-radius: 20px;
   padding: 20px;
   box-sizing: border-box;
+  box-shadow:
+    0px 2px 8px 0px #0000001a,
+    -1px 2px 2px 0px #ffffffb2 inset,
+    1px -1px 2px 0px #00000040 inset;
 }
 .gallery__flash-card-contents {
   flex-grow: 1;
@@ -133,7 +143,7 @@
   color: #1a1a1a;
   cursor: pointer;
 }
-.deck-view__new-card-btn,
+
 .deck-view__practice-btn {
   display: flex;
   align-items: center;
@@ -151,18 +161,6 @@
   cursor: pointer;
 }
 
-.deck-view__new-card-btn,
-.deck-view__practice-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.2;
-  color: #1a1a1a80;
-  text-decoration: none;
-  min-width: 140px;
-}
 .deck-view__new-card-btn:hover,
 .deck-view__practice-btn:hover {
   color: #1a1a1a;
@@ -198,10 +196,6 @@
   position: relative;
   z-index: 3;
   cursor: pointer;
-}
-
-/* Flipped card: hide title, show answer content (handled in JS) */
-.gallery__flash-card.is-flipped {
 }
 
 .gallery__delete-btn {

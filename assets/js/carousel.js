@@ -1,21 +1,24 @@
 import { decks, getDeckByID } from "./cards.js";
 import { stringToHex, hexToString, removeColorClasses } from "./colors.js";
 
+const pageElement = document.body;
+
 function renderCarouselDeckView(deck) {
+  pageElement.classList.add("page_no-mobile-bar");
   let currentIndex = 0;
   let showingQuestion = true;
 
   const carouselEl = document.querySelector("#carousel");
   // CAROUSEL CARD ELEMENT
-  const carouselCardEl = carouselEl.querySelector(".carousel__card");
+  const carouselCardEl = carouselEl.querySelector(".carousel__grid");
   const leftBtn = carouselEl.querySelector(".carousel__btn_type_left");
   const rightBtn = carouselEl.querySelector(".carousel__btn_type_right");
   const flipBtn = carouselEl.querySelector(".carousel__btn_type_flip");
   const carouselCardContent = carouselCardEl.querySelector(
-    ".carousel__card-content",
+    ".carousel__grid-content",
   );
   const deckContentEl = carouselCardContent.querySelector(
-    ".carousel__card-text",
+    ".carousel__grid-text",
   );
   const deckTitleEl = carouselEl.querySelector(".carousel__title");
 

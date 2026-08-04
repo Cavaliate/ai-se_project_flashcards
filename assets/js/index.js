@@ -2,19 +2,33 @@ import { decks, getDeckByID } from "./cards.js";
 import { renderCarouselDeckView } from "./carousel.js";
 import { removeColorClasses } from "./colors.js";
 import { renderDeckView as renderDeckViewModule } from "./deck-view.js";
+import { generateModal } from "./modal.js";
 
 const homeSection = document.querySelector("#home");
 const deckViewSection = document.querySelector("#deck-view");
 const carouselSection = document.querySelector("#carousel");
 const notFoundSection = document.querySelector("#not-found");
 const mainEl = document.querySelector(".pagemain-content");
+const pageElement = document.body;
 
-function renderHomeView() {
-  homeSection.style.display = "block";
+export const openModal = generateModal({
+  modalEl: document.querySelector("#confirmation-modal"),
+  cancelBtnEl: document.querySelector(".modal__btn_type_cancel"),
+  confirmBtnEl: document.querySelector(".modal__btn_type_confirm"),
+  visibleClass: "modal_visible",
+});
+
+function showView(section, display) {
+  homeSection.style.display = "none";
   deckViewSection.style.display = "none";
   carouselSection.style.display = "none";
   notFoundSection.style.display = "none";
+  section.style.display = display;
+}
 
+function renderHomeView() {
+  pageElement.classList.remove("page_no-mobile-bar");
+  showView(homeSection, "block");
   const deckTemplateEl = document.querySelector(
     "#gallery__flash-card-template",
   );
@@ -41,7 +55,13 @@ function renderHomeView() {
 
     if (deleteBtn) {
       deleteBtn.addEventListener("click", () => {
-        deckEl.remove();
+        openModal(() => {
+          const idx = decks.findIndex((c) => c.id === deck.id);
+          if (idx > -1) {
+            decks.splice(idx, 1);
+          }
+          deckEl.remove();
+        });
       });
     }
 
@@ -60,19 +80,13 @@ function renderHomeView() {
 }
 
 function renderDeckView(deck) {
-  renderDeckViewModule(deck, {
-    homeSection,
-    deckViewSection,
-    carouselSection,
-    notFoundSection,
-  });
+  showView(deckViewSection, "block");
+  renderDeckViewModule(deck, deckViewSection);
 }
 
 function renderNotFoundView() {
-  homeSection.style.display = "none";
-  deckViewSection.style.display = "none";
-  carouselSection.style.display = "none";
-  notFoundSection.style.display = "flex";
+  pageElement.classList.remove("page_no-mobile-bar");
+  showView(notFoundSection, "flex");
 }
 
 function router() {
@@ -90,10 +104,7 @@ function router() {
     }
     renderDeckView(currentDeck);
   } else if (hash.startsWith("carousel/")) {
-    homeSection.style.display = "none";
-    deckViewSection.style.display = "none";
-    carouselSection.style.display = "flex";
-    notFoundSection.style.display = "none";
+    showView(carouselSection, "flex");
     mainEl.classList.add("pagemain-content_carousel");
     const deckId = hash.split("/")[1];
     const currentDeck = getDeckByID(deckId);
