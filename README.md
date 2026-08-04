@@ -4,7 +4,7 @@ My first project in TripleTen's AI-Assisted Software Engineering program. It inc
 
 ## Features
 
-Interactive Flashcards, Dynamic Carousel, and More!
+Interactive Flashcards, Dynamic Carousel, Open Deck View, Confirmation Modal, Responsive Design and More!
 
 ## Technologies Used
 
