@@ -13,3 +13,4 @@ VSCode
 ## Deployed Site
 
 Check out [this site](https://cavaliate.github.io/ai-se_project_flashcards/) on GitHub Pages.
+Video Explanation [this site](https://www.loom.com/share/d067c924211f42be8be7fd3407530b37) from Loom.
