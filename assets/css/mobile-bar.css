@@ -51,6 +51,7 @@
     right: 20px;
     width: calc(50% - 26px);
     height: 44px;
+    min-width: unset;
   }
   .deck-view__new-card-btn {
     left: 20px;
@@ -63,17 +64,19 @@
   }
   .footer {
     position: fixed;
-    bottom: 23px;
+    bottom: 0px;
     left: 20px;
     right: 20px;
     z-index: 4;
   }
   .carousel__grid-content {
-    width: 353px;
+    max-width: 353px;
     height: 420px;
+    width: 100%;
   }
   .gallery__flash-card {
-    width: 353px;
+    max-width: 353px;
+    width: calc(100vw - 40px);
   }
   .gallery__flash-cards {
     justify-content: center;
